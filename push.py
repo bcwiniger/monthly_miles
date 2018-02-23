@@ -5,7 +5,6 @@ from datetime import timedelta
 import smtplib
 
 def main():
-    # get start and end dates
     now = datetime.utcnow()
     start = end_of_month(now)
     end = datetime(now.year, now.month, 1, 0, 0, 59)
@@ -37,7 +36,6 @@ def send_email(total_miles, email_to, email_from, email_pwd):
     server.login(email_from, email_pwd)
 
     msg = "Monthly Mileage: " + str(total_miles)
-    print(msg)
     server.sendmail(email_from, email_to, msg)
     server.quit()
 
