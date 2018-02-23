@@ -7,7 +7,7 @@ import smtplib
 def main():
     now = datetime.utcnow()
     start = end_of_month(now)
-    end = datetime(now.year, now.month, 1, 0, 0, 59)
+    end = datetime(now.year, now.month, 1, 0, 0, 1)
     
     dotenv.load()
     total_miles = get_total_miles(start, end, dotenv.get("STRAVA_TOKEN"))
